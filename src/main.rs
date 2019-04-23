@@ -25,11 +25,13 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 extern crate clap;
+extern crate delta_e;
 
 #[macro_use]
 extern crate itertools;
 
 use clap::{App, Arg};
+use delta_e::*;
 use std::fs::File;
 use std::io::prelude::*;
 
@@ -37,9 +39,6 @@ use std::process::exit;
 
 mod rgbtolab;
 use rgbtolab::*;
-
-mod delta_e;
-use delta_e::*;
 
 struct CliOptions {
     pub input1: Box<dyn Read>,
